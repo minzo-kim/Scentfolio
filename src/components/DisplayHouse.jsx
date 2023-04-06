@@ -1,29 +1,39 @@
 import React from 'react';
 
-const DisplayHouse = () => {
+const DisplayHouse = ({ updateFragrances }) => {
+    const formSubmit = (e) => {
+        e.preventDefault();
+        const house = e.target[0].value;
+        // console.log(name);
+
+        fetch(`/api/house/${house}`, {
+            method: 'GET',
+        })
+            .then((data) => {
+                // data is the data we get back, is array of objects.
+                // console.log('this should be data from submit', data);
+                return data.json();
+            })
+            .then((json) => {
+                // console.log(json);
+                // console.log('this should be data from submit', json);
+                // updating state with the response
+                // setFragrances(json);
+                // or update fragrances
+                updateFragrances(json);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
     return (
         // have an on submit
-        <form
-            onSubmit={(e) => {
-                const house = e.target[0].value;
-                // console.log(name);
-
-                fetch(`/api/house/${house}`, {
-                    method: 'get',
-                })
-                    .then((data) => {
-                        // console.log(data);
-                        // data is now an array with a bunch of info.
-                        // how do i render just this card? add it somehow to fragrance container? then how do i render it?
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    });
-            }}
-        >
-            <input type="text" placeholder="name" />
-            <button type="submit">Find by House</button>
-        </form>
+        <div>
+            <form onSubmit={formSubmit}>
+                <input type="text" placeholder="house" />
+                <button type="submit">Find by House</button>
+            </form>
+        </div>
     );
 };
 

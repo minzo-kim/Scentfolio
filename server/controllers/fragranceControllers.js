@@ -10,7 +10,7 @@ const fragranceController = {};
 fragranceController.displayName = (req, res, next) => {
     // make query to database
     // grab name off response body? deconstruct
-    console.log('made it to displayName controller');
+    // console.log('made it to displayName controller');
     // req.query is coming up with an empty object?
     const { name } = req.params;
     // console.log(name);
@@ -19,15 +19,15 @@ fragranceController.displayName = (req, res, next) => {
         // db.Fragrance.find()
         .exec()
         .then((data) => {
-            console.log(data);
-            res.locals = data;
+            // console.log(data);
+            res.locals.name = data;
             next();
         });
 };
 fragranceController.displayHouse = (req, res, next) => {
     // make query to database
     // grab name off response body? deconstruct
-    console.log('made it to displayHouse controller');
+    // console.log('made it to displayHouse controller');
     // req.query is coming up with an empty object?
     const { house } = req.params;
     // console.log(name);
@@ -37,7 +37,41 @@ fragranceController.displayHouse = (req, res, next) => {
         .exec()
         .then((data) => {
             console.log(data);
-            res.locals = data;
+            res.locals.house = data;
+            next();
+        });
+};
+fragranceController.displayYear = (req, res, next) => {
+    // make query to database
+    // grab name off response body? deconstruct
+    // console.log('made it to displayHouse controller');
+    // req.query is coming up with an empty object?
+    const { year } = req.params;
+    // console.log(name);
+    // console.log(req.params);
+    db.Fragrance.find({ year: `${year}` })
+        // db.Fragrance.find()
+        .exec()
+        .then((data) => {
+            console.log(data);
+            res.locals.year = data;
+            next();
+        });
+};
+fragranceController.displayNote = (req, res, next) => {
+    // make query to database
+    // grab name off response body? deconstruct
+    // console.log('made it to displayHouse controller');
+    // req.query is coming up with an empty object?
+    const { note } = req.params;
+    // console.log(name);
+    // console.log(req.params);
+    db.Fragrance.find({ notes: `${note}` })
+        // db.Fragrance.find()
+        .exec()
+        .then((data) => {
+            console.log(data);
+            res.locals.note = data;
             next();
         });
 };
@@ -51,7 +85,7 @@ fragranceController.displayFragrances = (req, res, next) => {
     db.Fragrance.find()
         .exec()
         .then((data) => {
-            res.locals = data;
+            res.locals.displayAll = data;
             next();
         });
     // res.send('this is from displayfragrances');
@@ -79,8 +113,4 @@ fragranceController.storeFragrance = (req, res, next) => {
     // return next();
 };
 
-fragranceController.sayHi = (req, res, next) => {
-    console.log('hi from hi controller');
-    next();
-};
 module.exports = fragranceController;

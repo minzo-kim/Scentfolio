@@ -14,21 +14,4 @@ const Fragrance = (props) => {
     );
 };
 
-// class Fragrance extends Component {
-//     render() {
-//         <div className="fragrance">
-//             {/* we can get the names and details through props, which will be passed from container */}
-//             <h2>Name of fragrance</h2>
-//             <ul>
-//                 <li>House</li>
-//                 <li>Year</li>
-//                 <li>Top Notes</li>
-//                 <li>Middle Notes</li>
-//                 <li>Base Notes</li>
-//                 <li>Comments</li>
-//             </ul>
-//         </div>;
-//     }
-// }
-
 export default Fragrance;

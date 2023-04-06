@@ -1,39 +1,86 @@
+/* ******************Individual Fragrances****************** */
 .fragrance {
-    border: 20px;
+    background-color: rgb(230, 226, 226);
+    border: 10px;
     border-color: black;
+    padding: 20px;
     margin: 10px;
     display: flex;
     flex-direction: column;
-    width: 200px;
     align-items: left;
+    width: 75%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10%;
+    filter: drop-shadow(5px 5px 3px rgb(117, 117, 117));
 }
 .name {
-    font-size: 20px;
+    font-size: 50px;
+    padding-bottom: 5px;
 }
 
 .house {
-    font-size: 15px;
+    font-size: 20px;
+    padding-bottom: 5px;
 }
 .year {
-    font-size: 15px;
+    font-size: 20px;
+    padding-bottom: 5px;
 }
 .notes {
-    font-size: 10px;
+    font-size: 15px;
+    padding-bottom: 5px;
 }
 .comments {
-    font-size: 10px;
+    font-size: 15px;
+    padding-bottom: 5px;
 }
-
+/* **************Fragrance Container******************* */
 .fragrance-container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
-
-/* .full-page {
+/* **************************************************** */
+.add-fragrance {
     display: flex;
     flex-direction: column;
-} */
+    /* currently takes up the entire page */
+}
+.add-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.search-criteria {
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+}
 
 body {
     background-color: rgb(240, 239, 239);
+}
+input {
+    height: 20px;
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+button {
+    border-radius: 5px;
+}
+/* *************Images ****** */
+.img {
+    height: 400px;
+}
+.img-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 }

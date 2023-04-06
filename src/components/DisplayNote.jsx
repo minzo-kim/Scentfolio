@@ -1,16 +1,12 @@
-import { useState } from 'react';
 import React from 'react';
-import FragranceContainer from './FragranceContainer.jsx';
 
-const DisplayName = ({ updateFragrances }) => {
-    // const [fragrances, setFragrances] = useState([]);
-    // console.log(fragrances);
+const DisplayNote = ({ updateFragrances }) => {
     const formSubmit = (e) => {
         e.preventDefault();
-        const name = e.target[0].value;
+        const note = e.target[0].value;
         // console.log(name);
 
-        fetch(`/api/name/${name}`, {
+        fetch(`/api/note/${note}`, {
             method: 'GET',
         })
             .then((data) => {
@@ -34,15 +30,11 @@ const DisplayName = ({ updateFragrances }) => {
         // have an on submit
         <div>
             <form onSubmit={formSubmit}>
-                <input type="text" placeholder="name" />
-                <button type="submit">Find by Name</button>
+                <input type="text" placeholder="note" />
+                <button type="submit">Find by Note</button>
             </form>
-            {/* passed in the fragrances state as prop */}
-
-            {/* my issue is that the fragrance container is not rendering? */}
-            {/* <FragranceContainer fragrances={fragrances} /> */}
         </div>
     );
 };
 
-export { DisplayName };
+export { DisplayNote };

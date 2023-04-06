@@ -2,28 +2,22 @@ import { useState } from 'react';
 import React from 'react';
 import FragranceContainer from './FragranceContainer.jsx';
 
-const DisplayName = ({ updateFragrances }) => {
+const DisplayAll = ({ updateFragrances }) => {
     // const [fragrances, setFragrances] = useState([]);
     // console.log(fragrances);
     const formSubmit = (e) => {
         e.preventDefault();
-        const name = e.target[0].value;
-        // console.log(name);
 
-        fetch(`/api/name/${name}`, {
+        fetch(`/api/display`, {
             method: 'GET',
         })
             .then((data) => {
                 // data is the data we get back, is array of objects.
-                // console.log('this should be data from submit', data);
                 return data.json();
             })
             .then((json) => {
                 // console.log(json);
-                // console.log('this should be data from submit', json);
                 // updating state with the response
-                // setFragrances(json);
-                // or update fragrances
                 updateFragrances(json);
             })
             .catch((err) => {
@@ -34,8 +28,7 @@ const DisplayName = ({ updateFragrances }) => {
         // have an on submit
         <div>
             <form onSubmit={formSubmit}>
-                <input type="text" placeholder="name" />
-                <button type="submit">Find by Name</button>
+                <button type="submit">Display Full Collection!</button>
             </form>
             {/* passed in the fragrances state as prop */}
 
@@ -45,4 +38,4 @@ const DisplayName = ({ updateFragrances }) => {
     );
 };
 
-export { DisplayName };
+export { DisplayAll };

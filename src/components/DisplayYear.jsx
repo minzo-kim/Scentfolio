@@ -1,16 +1,14 @@
-import { useState } from 'react';
 import React from 'react';
-import FragranceContainer from './FragranceContainer.jsx';
 
-const DisplayName = ({ updateFragrances }) => {
+const DisplayYear = ({ updateFragrances }) => {
     // const [fragrances, setFragrances] = useState([]);
     // console.log(fragrances);
     const formSubmit = (e) => {
         e.preventDefault();
-        const name = e.target[0].value;
+        const year = e.target[0].value;
         // console.log(name);
 
-        fetch(`/api/name/${name}`, {
+        fetch(`/api/year/${year}`, {
             method: 'GET',
         })
             .then((data) => {
@@ -34,8 +32,8 @@ const DisplayName = ({ updateFragrances }) => {
         // have an on submit
         <div>
             <form onSubmit={formSubmit}>
-                <input type="text" placeholder="name" />
-                <button type="submit">Find by Name</button>
+                <input type="text" placeholder="year" />
+                <button type="submit">Find by Year</button>
             </form>
             {/* passed in the fragrances state as prop */}
 
@@ -45,4 +43,4 @@ const DisplayName = ({ updateFragrances }) => {
     );
 };
 
-export { DisplayName };
+export { DisplayYear };

@@ -24,6 +24,7 @@ const AddFragrance = () => {
                     }),
                 });
             }}
+            className="add-fragrance"
         >
             <input type="text" placeholder="name" />
             <input type="text" placeholder="house" />
