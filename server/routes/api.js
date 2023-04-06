@@ -12,8 +12,12 @@ const router = express.Router();
 // there's a problem with my api routes.
 // "Error: Route.get() requires a callback function but got a [object Undefined]"
 
-router.get('/name', fragranceController.displayName, (req, res) => {
-    console.log('succesfully found the /name router');
+router.get('/name/:name', fragranceController.displayName, (req, res) => {
+    // console.log('succesfully found the /name router');
+    res.status(200).json(res.locals);
+});
+router.get('/house/:house', fragranceController.displayHouse, (req, res) => {
+    // console.log('succesfully found the /name router');
     res.status(200).json(res.locals);
 });
 // router.get('/year', fragranceController.displayYear, (req, res) => {

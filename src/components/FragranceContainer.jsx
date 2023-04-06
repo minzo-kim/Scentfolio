@@ -3,26 +3,28 @@ import Fragrance from './Fragrance.jsx';
 
 // const [fragrance, setfragrance] = useState([]);
 
-const FragranceContainer = () => {
+const FragranceContainer = (props) => {
     // declaring initial fragrances state using useState
     // inital state is an empty array
-    const [fragrances, setFragrances] = useState([]);
-    // // on click handler will add a new one to state
-    // use effect here to make the call
-    // const test = 'display';
+    // const [fragrances, setFragrances] = useState([]);
+    // // // on click handler will add a new one to state
+    // // use effect here to make the call
+    // // const test = 'display';
 
-    useEffect(() => {
-        // get response, turn to json, then pass into newFragrances
-        // possibly have a function to change /api/value
-        fetch(`/api/display`)
-            .then((data) => data.json())
-            // might have to spread fragrances into new fragrances
-            .then((json) => setFragrances(json));
-    }, [fragrances]);
+    // useEffect(() => {
+    //     // get response, turn to json, then pass into newFragrances
+    //     // possibly have a function to change /api/value
+    //     fetch(`/api/display`)
+    //         .then((data) => data.json())
+    //         // might have to spread fragrances into new fragrances
+    //         .then((json) => setFragrances(json));
+    // }, [fragrances]);
 
     // create fragrance array
     const fragranceArr = [];
-    for (let i = 0; i < fragrances.length; i++) {
+    console.log(props.fragrances);
+    // each is an object
+    for (let i = 0; i < props.fragrances.length; i++) {
         fragranceArr.push(
             <Fragrance
                 key={i}

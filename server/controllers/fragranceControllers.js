@@ -7,41 +7,40 @@ const fragranceController = {};
 // make an entry of a fragrance
 
 // search for by name
-// fragranceController.displayName = (req, res, next) => {
-//     // make query to database
-//     // grab name off response body? deconstruct
-//     const { name } = req.body;
-//     db.Fragrance.find({ name: name })
-//         .exec()
-//         .then((data) => {
-//             res.locals = data;
-//             next();
-//         });
-// };
-// search for by house
-// fragranceController.displayHouse = (req, res, next) => {
-//     // make query to database
-//     // grab name off response body? deconstruct
-//     const { house } = req.body;
-//     db.Fragrance.find({ house: house })
-//         .exec()
-//         .then((data) => {
-//             res.locals = data;
-//             next();
-//         });
-// };
-// search for by year
-// fragranceController.displayYear = (req, res, next) => {
-//     // make query to database
-//     // grab name off response body? deconstruct
-//     const { year } = req.body;
-//     db.Fragrance.find({ year: year })
-//         .exec()
-//         .then((data) => {
-//             res.locals = data;
-//             next();
-//         });
-// };
+fragranceController.displayName = (req, res, next) => {
+    // make query to database
+    // grab name off response body? deconstruct
+    console.log('made it to displayName controller');
+    // req.query is coming up with an empty object?
+    const { name } = req.params;
+    // console.log(name);
+    // console.log(req.params);
+    db.Fragrance.find({ name: `${name}` })
+        // db.Fragrance.find()
+        .exec()
+        .then((data) => {
+            console.log(data);
+            res.locals = data;
+            next();
+        });
+};
+fragranceController.displayHouse = (req, res, next) => {
+    // make query to database
+    // grab name off response body? deconstruct
+    console.log('made it to displayHouse controller');
+    // req.query is coming up with an empty object?
+    const { house } = req.params;
+    // console.log(name);
+    // console.log(req.params);
+    db.Fragrance.find({ house: `${house}` })
+        // db.Fragrance.find()
+        .exec()
+        .then((data) => {
+            console.log(data);
+            res.locals = data;
+            next();
+        });
+};
 // search for by notes?
 
 // display fragrances

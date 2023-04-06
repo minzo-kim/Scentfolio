@@ -8,10 +8,7 @@ const App = () => {
     return (
         <div className="full-page">
             <AddFragrance />
-            {/* <DisplayName /> */}
-            <FragranceContainer />
-            {/* add buttons to take you to either view all or search by specific */}
-            {/* on both view all or specific, have an add fragrance? perhaps just on view all. */}
+            <DisplayName />
         </div>
     );
 };
