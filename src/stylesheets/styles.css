@@ -1,0 +1,39 @@
+.fragrance {
+    border: 20px;
+    border-color: black;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: left;
+}
+.name {
+    font-size: 20px;
+}
+
+.house {
+    font-size: 15px;
+}
+.year {
+    font-size: 15px;
+}
+.notes {
+    font-size: 10px;
+}
+.comments {
+    font-size: 10px;
+}
+
+.fragrance-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* .full-page {
+    display: flex;
+    flex-direction: column;
+} */
+
+body {
+    background-color: rgb(240, 239, 239);
+}
