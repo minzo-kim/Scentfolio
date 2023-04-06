@@ -16,10 +16,10 @@ router.get('/name', fragranceController.displayName, (req, res) => {
     console.log('succesfully found the /name router');
     res.status(200).json(res.locals);
 });
-router.get('/year', fragranceController.displayYear, (req, res) => {
-    console.log('succesfully found the /year router');
-    res.status(200).json(res.locals);
-});
+// router.get('/year', fragranceController.displayYear, (req, res) => {
+//     console.log('succesfully found the /year router');
+//     res.status(200).json(res.locals);
+// });
 
 // *************************** THESE DOWN HERE WORK********************************
 // a post request to add to database collection

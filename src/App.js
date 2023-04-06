@@ -5,7 +5,6 @@ import { DisplayName } from './components/DisplayName.jsx';
 import './stylesheets/styles.css';
 
 const App = () => {
-    const addComponent = () => {};
     return (
         <div className="full-page">
             <AddFragrance />
@@ -16,20 +15,5 @@ const App = () => {
         </div>
     );
 };
-
-// class App extends Component {
-//     constructor(props) {
-//         super(props);
-//     }
-//     render() {
-//         return (
-//             <div>
-//                 {/* perhaps have 2 buttons: display fragrance, and add fragrance */}
-//                 <QueryBox />
-//                 <FragranceContainer />
-//             </div>
-//         );
-//     }
-// }
 
 export default App;
