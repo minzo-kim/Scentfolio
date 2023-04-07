@@ -18,10 +18,7 @@ const DisplayYear = ({ updateFragrances }) => {
             })
             .then((json) => {
                 // console.log(json);
-                // console.log('this should be data from submit', json);
-                // updating state with the response
-                // setFragrances(json);
-                // or update fragrances
+
                 updateFragrances(json);
             })
             .catch((err) => {
@@ -36,9 +33,6 @@ const DisplayYear = ({ updateFragrances }) => {
                 <button type="submit">Find by Year</button>
             </form>
             {/* passed in the fragrances state as prop */}
-
-            {/* my issue is that the fragrance container is not rendering? */}
-            {/* <FragranceContainer fragrances={fragrances} /> */}
         </div>
     );
 };

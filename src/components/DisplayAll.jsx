@@ -30,10 +30,6 @@ const DisplayAll = ({ updateFragrances }) => {
             <form onSubmit={formSubmit}>
                 <button type="submit">Display Full Collection!</button>
             </form>
-            {/* passed in the fragrances state as prop */}
-
-            {/* my issue is that the fragrance container is not rendering? */}
-            {/* <FragranceContainer fragrances={fragrances} /> */}
         </div>
     );
 };

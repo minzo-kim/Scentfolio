@@ -16,10 +16,7 @@ const DisplayHouse = ({ updateFragrances }) => {
             })
             .then((json) => {
                 // console.log(json);
-                // console.log('this should be data from submit', json);
-                // updating state with the response
-                // setFragrances(json);
-                // or update fragrances
+
                 updateFragrances(json);
             })
             .catch((err) => {

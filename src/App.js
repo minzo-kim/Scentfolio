@@ -19,7 +19,7 @@ const App = () => {
     return (
         <div className="full-page">
             <div className="search-criteria">
-                <h1>This is an expensive hobby</h1>
+                <h1>A little collection of sorts</h1>
                 <div className="add-display">
                     <div>
                         <AddFragrance />
